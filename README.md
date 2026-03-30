@@ -91,7 +91,7 @@ button:hover { background:#1ed760; }
 .history li, .chat li { color:#b3b3b3; margin-bottom:5px; }
 
 
-🧠 6. JS dinámico: static/script.js
+
 
 
 const audio = document.getElementById("radio");
@@ -173,5 +173,5 @@ setInterval(actualizarCancion,10000);
 actualizarCancion();
 
 
-📌 7. Imágenes de portadas (static/images/)
+
 ![WhatsApp Image 2026-03-29 at 8 35 20 PM (1)](https://github.com/user-attachments/assets/a5a5a685-77fc-4730-96cd-1eb4dacd96eb)
