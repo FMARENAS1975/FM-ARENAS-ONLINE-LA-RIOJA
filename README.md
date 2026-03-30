@@ -69,13 +69,9 @@ FM ARENAS ONLINE
   </main>
 </div>
 
-<script src="{{ [url_for](https://music.youtube.com/playlist?list=LM)('static', filename='script.js') }}"></script>
+<script src="{{ [[url_for](https://music.youtube.com/playlist?list=LM)](https://music.youtube.com/playlist?list=LM)('static', filename='script.js') }}"></script>
 </body>
 </html>
-
-
-
-
 body { margin:0; font-family:Arial; background:#121212; color:white; }
 .app { display:flex; height:100vh; }
 .sidebar { width:220px; background:#000; padding:20px; }
@@ -89,10 +85,6 @@ button:hover { background:#1ed760; }
 .programacion h2, .programacion h3 { color:#1db954; }
 .history ul, .chat ul { list-style:none; padding:0; }
 .history li, .chat li { color:#b3b3b3; margin-bottom:5px; }
-
-
-
-
 
 const audio = document.getElementById("radio");
 const btn = document.getElementById("playBtn");
