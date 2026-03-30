@@ -1,4 +1,4 @@
-!DOCTYPE html>
+FM ARENAS ONLINE
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -69,12 +69,12 @@
   </main>
 </div>
 
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="{{ [url_for](https://music.youtube.com/playlist?list=LM)('static', filename='script.js') }}"></script>
 </body>
 </html>
 
 
-🎨 5. CSS: static/styles.css
+
 
 body { margin:0; font-family:Arial; background:#121212; color:white; }
 .app { display:flex; height:100vh; }
