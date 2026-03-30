@@ -72,48 +72,6 @@ FM ARENAS ONLINE
 <script src="{{ [[url_for](https://music.youtube.com/playlist?list=LM)](https://music.youtube.com/playlist?list=LM)('static', filename='script.js') }}"></script>
 </body>
 </html>
-body { margin:0; font-family:Arial; background:#121212; color:white; }
-.app { display:flex; height:100vh; }
-.sidebar { width:220px; background:#000; padding:20px; }
-.sidebar a { display:block; color:#b3b3b3; margin:10px 0; text-decoration:none; }
-.sidebar a:hover { color:white; }
-.main { flex:1; padding:30px; overflow-y:auto; }
-.player-card, .programacion, .history, .chat { background:#181818; padding:20px; border-radius:10px; width:600px; margin-bottom:20px; }
-.cover img { width:100%; border-radius:10px; }
-button { background:#1db954; border:none; padding:10px 20px; color:white; border-radius:20px; cursor:pointer; }
-button:hover { background:#1ed760; }
-.programacion h2, .programacion h3 { color:#1db954; }
-.history ul, .chat ul { list-style:none; padding:0; }
-.history li, .chat li { color:#b3b3b3; margin-bottom:5px; }
-
-const audio = document.getElementById("radio");
-const btn = document.getElementById("playBtn");
-const historyList = document.getElementById("historyList");
-const songTitle = document.getElementById("songTitle");
-const artist = document.getElementById("artist");
-const coverImg = document.getElementById("coverImg");
-
-let playing = false;
-let lastSong = "";
-
-btn.addEventListener("click", () => {
-  if(!playing){audio.play(); btn.textContent="⏸️ Pause";}
-  else {audio.pause(); btn.textContent="▶️ Play";}
-  playing = !playing;
-});
-
-// Chat en vivo WebSocket
-const socket = io();
-document.getElementById("enviarBtn").addEventListener("click", ()=>{
-  const msg = document.getElementById("mensajeInput").value;
-  socket.emit("mensaje_oyente", {usuario:"Oyente", mensaje:msg});
-  document.getElementById("mensajeInput").value = "";
-});
-socket.on("nuevo_mensaje", data => {
-  const li = document.createElement("li");
-  li.textContent = `${data.usuario}: ${data.mensaje}`;
-  document.getElementById("chatList").appendChild(li);
-});
 
 // Publicidad
 const anuncios = [
