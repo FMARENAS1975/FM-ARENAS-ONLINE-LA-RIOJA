@@ -140,7 +140,7 @@ async function actualizarCancion(){
 
     if(song && song !== lastSong){
       lastSong = song;
-      const partes = song.split(" - ");
+      const partes = song.split(" - "); 
       const titulo = partes[0] || song;
       const artistaNombre = partes[1] || "Desconocido";
 
