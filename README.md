@@ -120,50 +120,6 @@ const anuncios = [
   "HC PRODUCCIONES – TODO PARA TU FIESTA – 3804805889",
   "LOCUTOR FOTOGRAFIA SONIDO DJS LUCES  – 3804557244",
   "HC PRO TRANSMISIONES EN VIVO - TEL.  3804805889o"
-];
-let idx = 0;
-function mostrarPublicidad(){document.getElementById("publicidad").textContent = anuncios[idx]; idx=(idx+1)%anuncios.length;}
-setInterval(mostrarPublicidad,15000);
-mostrarPublicidad();
-
-// Actualiza canción en vivo y locutor
-async function reproducirLocutor(texto){
-  try{ new Audio(`/locutor/${encodeURIComponent(texto)}`).play(); }
-  catch(e){console.log("Error locutor:", e);}
-}
-
-async function actualizarCancion(){
-  try{
-    const res = await fetch("/current_song");
-    const data = await res.json();
-    const song = data.song;
-
-    if(song && song !== lastSong){
-      lastSong = song;
-      const partes = song.split(" - "); 
-      const titulo = partes[0] || song;
-      const artistaNombre = partes[1] || "Desconocido";
-
-      songTitle.textContent = titulo;
-      artist.textContent = artistaNombre;
-      coverImg.src = `static/images/${titulo.replace(/\s+/g,"").toLowerCase()}.jpg`;
-
-      const li = document.createElement("li");
-      li.textContent = `${artistaNombre} - ${titulo}`;
-      historyList.prepend(li);
-
-      const locMsgs = [
-        `Qué buena está sonando ${titulo} de ${artistaNombre}... ¡subí el volumen!`,
-        `${titulo} de ${artistaNombre} es uno de mis favoritos`,
-        `Disfrutá ${titulo} de ${artistaNombre}, Leo y Sofi te acompañan`
-      ];
-      reproducirLocutor(locMsgs[Math.floor(Math.random()*locMsgs.length)]);
-    }
-  }catch(e){console.log("Error:", e);}
-}
-setInterval(actualizarCancion,10000);
-actualizarCancion();
-
 
 
 ![WhatsApp Image 2026-03-29 at 8 35 20 PM (1)](https://github.com/user-attachments/assets/a5a5a685-77fc-4730-96cd-1eb4dacd96eb)
